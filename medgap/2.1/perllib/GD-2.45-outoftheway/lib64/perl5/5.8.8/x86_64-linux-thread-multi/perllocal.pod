@@ -1,0 +1,22 @@
+=head2 Tue Jul 27 16:55:53 2010: C<Module> L<GD|GD>
+
+=over 4
+
+=item *
+
+C<installed into: /home/hugolam/app/perllib/GD/lib/perl5/site_perl/5.8.8>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.45>
+
+=item *
+
+C<EXE_FILES: bdf_scripts/bdf2gdfont.pl>
+
+=back
+
