@@ -1,0 +1,3 @@
+[submodule "medgap/2.0"]
+	path = medgap/2.0
+	url = https://github.com/StanfordBioinformatics/MedGAP.git
