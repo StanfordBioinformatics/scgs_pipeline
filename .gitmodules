@@ -1,3 +1,6 @@
+[submodule "medgap/2.1"]
+	path = medgap/2.1
+	url = https://isaacliao@github.com/StanfordBioinformatics/MedGAP.git
 [submodule "medgap/2.0"]
 	path = medgap/2.0
-	url = https://github.com/StanfordBioinformatics/MedGAP.git
+	url = https://isaacliao@github.com/StanfordBioinformatics/MedGAP.git
