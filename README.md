@@ -7,6 +7,7 @@ Setup
 -----
 After cloning into the repo, do the following to check out dependencies:
 
+    cd scgs_pipeline
     git submodule init
     git submodule update
 
