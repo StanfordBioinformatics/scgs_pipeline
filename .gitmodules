@@ -4,3 +4,6 @@
 [submodule "medgap/2.0"]
 	path = medgap/2.0
 	url = https://isaacliao@github.com/StanfordBioinformatics/MedGAP.git
+[submodule "tools/jsonwf/1.0.3"]
+	path = tools/jsonwf/1.0.3
+	url = https://github.com/StanfordBioinformatics/JsonWf.git
