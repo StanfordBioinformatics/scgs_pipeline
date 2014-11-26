@@ -13,3 +13,6 @@
 [submodule "tools/jsonwf/1.0.3"]
 	path = tools/jsonwf/1.0.3
 	url = https://github.com/StanfordBioinformatics/JsonWf.git
+[submodule "coverage_stats/0.1"]
+	path = coverage_stats/0.1
+	url = https://github.com/StanfordBioinformatics/coverage_stats.git

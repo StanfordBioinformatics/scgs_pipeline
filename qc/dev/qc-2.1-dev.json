@@ -11,7 +11,8 @@
 		"rModule": "r",
 		"javaModule": "java/latest",
 		"samtoolsModule": "samtools/0.1.19",
-		"fastqcModule": "fastqc/0.10.1"
+		"fastqcModule": "fastqc/0.10.1",
+		"coverage_stats": "/srv/gsfs0/SCGS/pipeline/coverage_stats/0.1"
 	},
 
   "globalQsub": {
