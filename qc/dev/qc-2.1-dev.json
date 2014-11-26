@@ -12,8 +12,6 @@
 		"javaModule": "java/latest",
 		"samtoolsModule": "samtools/0.1.19",
 		"fastqcModule": "fastqc/0.10.1"
-		"vizzle_path": "/srv/gs1/software/gbsc/vizzle"
-		"pubble_path": "/srv/gs1/software/gbsc/pubble"
 	},
 
   "globalQsub": {
@@ -60,19 +58,19 @@
 			"inputFormat": "bam",
 			"outdirs": [
 				{"d_flagstat": "${outdir}/flagstat"}
-      ],
+				],
 
-      "outfiles": [
-	    	{"f_flagstat": "${d_flagstat}/flagstat.txt"}
-			],
+		        "outfiles": [
+				{"f_flagstat": "${d_flagstat}/flagstat.txt"}
+				],
 
 			"qsub": {
 				"name": "flagstat",
 				"slots": 1,
-       			"mem": "3G"
-      },
+				"mem": "3G"
+				},
 
-      "args": ["${bam}",">","${f_flagstat}"]
+			"args": ["${bam}",">","${f_flagstat}"]
 		},
 
 		{
@@ -718,17 +716,14 @@
 		
 			"args": ["${vcf}",">","${f_snpEff_vcf}"]
 		},
-		{
-			"analysis": "vizzle",
-			"description": "Creates plots of various QC metrics",
-			"enable": 0,
-			"modules": ["${javaModule}","snpeff"],
-			"jar": "${SNPEFF}/snpEff.jar eff",
-			"javavm": "-Xmx4G",
-			"inputFormat": "vcf",
 
+		{
+			"analysis": "coverage_stats",
+			"description": "Additional coverage stats",
+			"enable": 1,
+			"modules": ["python/3.2"],
 			"outdirs": [
-				{"d_SnpEff": "${outdir}/SnpEff"}
+				{"d_coverage_stats": "${outdir}/coverage_stats"}
 			],
 
 			"outfiles": [
@@ -736,7 +731,7 @@
 			],
 			
 			"qsub": {
-				"name": "SnpEff",
+				"name": "coverage_stats",
 				"slots": 1,
 				"mem": "7G",
 				"directory": "${d_SnpEff}"
@@ -748,37 +743,23 @@
 			},
 		
 			"args": ["${vcf}",">","${f_snpEff_vcf}"]
-		}
-		{
-			"analysis": "pubble",
-			"description": "Assembles plots into QC reports in various formats",
-			"enable": 0,
-			"modules": ["${javaModule}","snpeff"],
-			"jar": "${SNPEFF}/snpEff.jar eff",
-			"javavm": "-Xmx4G",
-			"inputFormat": "vcf",
-
+			"inputFormat": "bam",
 			"outdirs": [
-				{"d_SnpEff": "${outdir}/SnpEff"}
-			],
+				{"d_flagstat": "${outdir}/flagstat"}
+				],
 
-			"outfiles": [
-				{"f_snpEff_vcf": "${d_SnpEff}/$(basename ${vcf%.*}_snpeff.vcf)"}
-			],
-			
+		        "outfiles": [
+				{"f_flagstat": "${d_flagstat}/flagstat.txt"}
+				],
+
 			"qsub": {
-				"name": "SnpEff",
+				"name": "flagstat",
 				"slots": 1,
-				"mem": "7G",
-				"directory": "${d_SnpEff}"
-			},
-	
-			"params": {
-				"-c": "${SNPEFF}/snpEff.config",
-				"-v": "${reference_SnpEff}"
-			},
-		
-			"args": ["${vcf}",">","${f_snpEff_vcf}"]
+				"mem": "3G"
+				},
+
+			"args": ["${bam}",">","${f_flagstat}"]
 		}
+		
 	]
 }

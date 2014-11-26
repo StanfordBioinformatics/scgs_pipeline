@@ -4,3 +4,9 @@
 [submodule "medgap/2.0"]
 	path = medgap/2.0
 	url = https://isaacliao@github.com/StanfordBioinformatics/MedGAP.git
+[submodule "ingenuity_upload/dev"]
+	path = ingenuity_upload/dev
+	url = https://github.com/StanfordBioinformatics/ingenuity_upload.git
+[submodule "coverage_stats/dev"]
+	path = coverage_stats/dev
+	url = https://github.com/StanfordBioinformatics/coverage_stats.git
