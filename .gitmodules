@@ -16,3 +16,6 @@
 [submodule "coverage_stats/0.1"]
 	path = coverage_stats/0.1
 	url = https://github.com/StanfordBioinformatics/coverage_stats.git
+[submodule "coverage_stats/0.2"]
+	path = coverage_stats/0.2
+	url = https://github.com/StanfordBioinformatics/coverage_stats.git
